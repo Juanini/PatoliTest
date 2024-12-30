@@ -183,7 +183,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerMovement: {fileID: 733562798}
-  _playerAnim: {fileID: 733562798}
+  _playerAnim: {fileID: 733562800}
+  playerVelocity: {fileID: 11400000, guid: ad78d831055024e5a96be4b27d7dfb5d, type: 2}
 --- !u!114 &733562800
 MonoBehaviour:
   m_ObjectHideFlags: 0
