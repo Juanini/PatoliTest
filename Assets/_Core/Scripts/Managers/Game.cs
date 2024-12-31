@@ -1,4 +1,5 @@
 using System;
+using Cysharp.Threading.Tasks;
 using Obvious.Soap;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,17 +7,23 @@ using UnityEngine.Serialization;
 
 public class Game : Singleton<Game>
 {
+    public GameState gameState;
     public LevelConfigSO activeLevelConfig;
     public IntVariable levelCoinsVar;
 
     public void Awake()
     {
-        Init();
+        gameState.Init();
     }
 
-    private void Init()
+    public void Init()
     {
         levelCoinsVar.OnValueChanged += OnCoinsValueChanged;
+    }
+    
+    public void StartPlaying()
+    {
+        gameState.TransitionToState(GameStates.Playing);
     }
 
     private void OnCoinsValueChanged(int coins)
@@ -29,7 +36,12 @@ public class Game : Singleton<Game>
 
     private void LevelCompleted()
     {
-        UIManager.Ins.ShowGameOver();
+        gameState.TransitionToState(GameStates.LevelCompleted);
+    }
+    
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(Constants.SCENE_GAME);
     }
     
     // * =====================================================================================================================================
@@ -40,8 +52,5 @@ public class Game : Singleton<Game>
         levelCoinsVar.OnValueChanged -= OnCoinsValueChanged;
     }
 
-    public void ReloadScene()
-    {
-        SceneManager.LoadScene(Constants.SCENE_GAME);
-    }
+    
 }

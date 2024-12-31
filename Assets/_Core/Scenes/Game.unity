@@ -1395,6 +1395,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1282393594}
   - component: {fileID: 1282393595}
+  - component: {fileID: 1282393596}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -1429,8 +1430,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc44bd78262849deb726545f0ef8e219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameState: {fileID: 1282393596}
   activeLevelConfig: {fileID: 11400000, guid: db17103f545334d2db437e162ba572cc, type: 2}
   levelCoinsVar: {fileID: 11400000, guid: ce42240996dde4eb0b08602655882dc2, type: 2}
+--- !u!114 &1282393596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282393593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4846e4ec6be04f4083ffb4bdea11b2ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1501583348
 GameObject:
   m_ObjectHideFlags: 0

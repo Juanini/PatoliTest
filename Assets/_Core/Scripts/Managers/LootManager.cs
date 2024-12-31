@@ -6,12 +6,7 @@ public class LootManager : Singleton<LootManager>
     [SerializeField] private Lootable lootablePrefab;
     private IObjectPool<Lootable> lootPool;
 
-    private void Init()
-    {
-            
-    }
-    
-    private void Awake()
+    public void Init()
     {
         lootPool = new ObjectPool<Lootable>(
             CreateLootable,
@@ -21,7 +16,12 @@ public class LootManager : Singleton<LootManager>
             false,
             10,
             30
-        );
+        );    
+    }
+    
+    private void Awake()
+    {
+        
     }
 
     private Lootable CreateLootable()
