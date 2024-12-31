@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class InteractableItem : MonoBehaviour
 {
     [SerializeField] private InteractableItemVariable activeInteractableItemVar;
-    [SerializeField] private PositionHolder uiSpawnPos;
+    [SerializeField] private Transform uiSpawnPos;
 
     private bool isActive = true;
     public bool IsActive => isActive;
@@ -14,7 +14,9 @@ public abstract class InteractableItem : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (!other.CompareTag(Constants.TAG_PLAYER)) { return; }
         if (!isActive) { return; }
+        
         activeInteractableItemVar.Value = this;
     }
 
@@ -36,6 +38,6 @@ public abstract class InteractableItem : MonoBehaviour
 
     public Vector3 GetUISpawnPos()
     {
-        return uiSpawnPos.localPositions[0];
+        return uiSpawnPos.transform.position;
     }
 }

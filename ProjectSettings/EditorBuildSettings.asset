@@ -137,4 +137,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/TopDownEngine/ThirdParty/MoreMountains/MMTools/Demos/MMSceneLoading/MMSceneLoadingDemoSceneB.unity
     guid: 352d34cac2435634fb99618d19a3929c
+  - enabled: 1
+    path: Assets/_Core/Scenes/Game.unity
+    guid: 800d2e3a4896946448b3f8d36a0fc2a3
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
